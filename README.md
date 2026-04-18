@@ -1,50 +1,47 @@
-# Welcome to your Expo app 👋
+# 🎲 Dice Roller
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native dice roller app built with [Expo](https://expo.dev). Roll up to 6 dice at once with smooth 3D animations, haptic feedback, and shake-to-roll support.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Roll 1–6 dice simultaneously
+- Shake your device to roll
+- 3D tumble animation with staggered landing per die
+- Haptic feedback on roll and result
+- Live total display when rolling 2+ dice
+- Responsive die sizing for any screen
 
-   ```bash
-   npm install
-   ```
+## Project Structure
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+app/
+  (tabs)/index.tsx   # Main dice roller screen
+components/
+  dice.tsx           # Animated die component
+  dice-face.tsx      # Pip (dot) layout renderer
+hooks/
+  use-shake.ts       # Accelerometer shake detection
+constants/
+  theme.ts           # Shared theme tokens
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Get Started
 
-## Learn more
+```bash
+npm install
+npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Run on:
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Tech Stack
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- [Expo](https://expo.dev) ~54
+- [React Native](https://reactnative.dev) 0.81
+- [Expo Router](https://expo.github.io/router) ~6
+- [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/) ~4 — UI-thread animations
+- [expo-sensors](https://docs.expo.dev/versions/latest/sdk/sensors/) — shake detection
+- [expo-haptics](https://docs.expo.dev/versions/latest/sdk/haptics/) — tactile feedback
